@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earth Day Challenge — Play</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body class="game-page">
+
+  <!-- ───── GAME SECTION ───── -->
+  <section id="game">
+    <div class="game-header">
+      <div class="round-indicator">
+        <span id="roundLabel">Round 1 of 3</span>
+      </div>
+      <div class="brands-tag">Featuring: Undenim · Islands of Loom · Thaely</div>
+    </div>
+
+    <!-- Tree Growth Display -->
+    <div class="tree-stage" id="treeStage">
+      <div class="tree-container" id="treeContainer">
+        <div class="tree-art" id="treeArt"></div>
+        <div class="tree-label" id="treeLabel">Your Sustainability Seed</div>
+      </div>
+      <div class="score-bar">
+        <div class="score-dot" id="dot1"></div>
+        <div class="score-dot" id="dot2"></div>
+        <div class="score-dot" id="dot3"></div>
+      </div>
+    </div>
+
+    <!-- Question -->
+    <div class="question-block" id="questionBlock">
+      <p class="question-prompt" id="questionPrompt">Loading question…</p>
+      <div class="outfits-grid" id="outfitsGrid"></div>
+    </div>
+  </section>
+
+  <!-- ───── OVERLAY ───── -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ───── WRONG / EARLY EXIT POPUP ───── -->
+  <div class="popup" id="wrongPopup">
+    <div class="popup-earth">
+      <div class="earth-anim" id="earthAnim">🌍</div>
+    </div>
+    <h2 id="wrongTitle">You made me happy! 🌿</h2>
+    <p id="wrongBody">Even though that wasn't the most sustainable pick — your curiosity alone helps the planet.</p>
+    <div class="coupon-box" id="wrongCoupon">
+      <span class="coupon-label">Your Discount Code</span>
+      <span class="coupon-code" id="wrongCouponCode">HERO10</span>
+      <button class="copy-btn" onclick="copyCode('wrongCouponCode')">Copy</button>
+    </div>
+    
+    <p class="farewell-note">Thanks for playing! Close this tab whenever you're ready. 🌿</p>
+  </div>
+
+  <!-- ───── WIN POPUP ───── -->
+  <div class="popup popup-win" id="winPopup">
+    <div class="confetti-wrap" id="confettiWrap"></div>
+    <div class="big-tree-anim">🌲</div>
+    <h2>You are a true hero saving the world by making better choices 🏆</h2>
+    <p>Three for three! Your tree is fully grown — and so is your reward.</p>
+    <div class="coupon-box gold">
+      <span class="coupon-label">Your Exclusive Code</span>
+      <span class="coupon-code" id="winCouponCode">HERO30</span>
+      <button class="copy-btn" onclick="copyCode('winCouponCode')">Copy</button>
+    </div>
+    <p class="brand-note">30% off on Undenim, Islands of Loom &amp; all sustainable brands.</p>
+    <p class="farewell-note">Thanks for playing! Close this tab whenever you're ready. 🌿</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
