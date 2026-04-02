@@ -6,14 +6,14 @@ const rounds = [
     prompt: "Which outfit is crafted from truly sustainable materials?",
     outfits: [
       {
-        image: "https://res.cloudinary.com/dmafomdl2/image/upload/v1775113908/k6hzrc4vt19npvunbtdc.jpg",   // ← Round 1, Option A
+        image: "https://raw.githubusercontent.com/Adarsh961/Earthday-Getto/main/james-balensiefen-XovTIAjyx2E-unsplash.jpg",   // ← Round 1, Option A
         name: "Raw Denim Jacket",
         desc: "Stone-washed denim with zero synthetic blends, natural indigo dye and upcycled metal rivets.",
         brand: "Undenim",
         sustainable: true,
       },
       {
-        image: "https://res.cloudinary.com/dmafomdl2/image/upload/v1775116801/lafptcsd9fyhr6gtuc6b.jpg",   // ← Round 1, Option B
+        image: "https://raw.githubusercontent.com/Adarsh961/Earthday-Getto/main/image.jpg",   // ← Round 1, Option B
         name: "Faux Leather Blazer",
         desc: "Synthetic PVC-based faux leather with polyester lining. Mass-produced fast-fashion staple.",
         brand: "Fast Co.",
@@ -25,18 +25,19 @@ const rounds = [
     prompt: "Both look beautiful — but which one loves the planet back?",
     outfits: [
       {
-        image: "https://res.cloudinary.com/dmafomdl2/image/upload/c_fill,h_220,w_400,g_auto/v1775116855/ihclf8jrr4n5xgoxv17b.jpg",   // ← Round 2, Option A
+        image: "https://raw.githubusercontent.com/Adarsh961/Earthday-Getto/main/image(1).jpg",   // ← Round 2, Option A
         name: "Nylon Swimwear Set",
         desc: "100% virgin nylon and elastane. High water consumption. Microplastics shed every wash.",
         brand: "TrendWave",
         sustainable: false,
       },
       {
-        image: "https://res.cloudinary.com/dmafomdl2/image/upload/c_fill,h_220,w_400,g_auto/v1775116887/qyhnkqvsdhpw7klumrbq.jpg",   // ← Round 2, Option B
+        image: "https://raw.githubusercontent.com/Adarsh961/Earthday-Getto/main/image(2).jpg",   // ← Round 2, Option B
         name: "Handloom Linen Kurta",
         desc: "Hand-woven on traditional looms with natural linen, vegetable dyes and zero synthetic finishing.",
         brand: "Islands of Loom",
         sustainable: true,
+        objPos: "center 20%" 
       },
     ],
   },
@@ -44,14 +45,15 @@ const rounds = [
     prompt: "The final round — pick the true sustainability champion!",
     outfits: [
       {
-        image: "https://res.cloudinary.com/dmafomdl2/image/upload/v1775117181/o5uoiklgvpvvpsyjcyjq.jpg",   // ← Round 3, Option A
+        image: "https://raw.githubusercontent.com/Adarsh961/Earthday-Getto/main/image(4).jpg",   // ← Round 3, Option A
         name: "Plant-Based Sneaker",
         desc: "Upper from corn waste, natural rubber soles, recycled sugarcane foam insoles. Carbon neutral shipping.",
         brand: "Thaely",
         sustainable: true,
+        objPos: "60% center",
       },
       {
-        image: "https://res.cloudinary.com/dmafomdl2/image/upload/v1775116919/qqmvagkg7uuuyfekj9rc.jpg",   // ← Round 3, Option B
+        image: "https://raw.githubusercontent.com/Adarsh961/Earthday-Getto/main/women-heeled-shoes.jpg",   // ← Round 3, Option B
         name: "Glitter Platform Heel",
         desc: "Acrylic platform, PVC straps and synthetic glitter micro-particles. Non-recyclable composite materials.",
         brand: "SparkFast",
@@ -121,7 +123,7 @@ function renderRound() {
 
     // Build card HTML — image tag, not emoji
     card.innerHTML =
-      '<img class="outfit-img" src="' + outfit.image + '" alt="' + outfit.name + '" />' +
+      '<img class="outfit-img" src="' + outfit.image + '" alt="' + outfit.name + '" style="object-position:' + (outfit.objPos || 'center center') + '" />' +
       '<div class="outfit-name">' + outfit.name + '</div>' +
       
       '<span class="outfit-brand">' + outfit.brand + '</span>';
