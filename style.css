@@ -112,7 +112,7 @@ h1 em {
 .trail-step {
   background: rgba(37,188,180,0.12);
   border: 1px solid rgba(37,188,180,0.3);
-  color: var(--cyan-light);
+  color: var(--cyan-dark);
   padding: 7px 12px;
   border-radius: 8px;
   font-size: 0.8rem;
@@ -764,8 +764,8 @@ h1, h2, .outfit-name, .question-prompt { color: var(--black); }
 
 /* ─── Fix 1: Round indicator visible on white background ─── */
 .round-indicator {
-  background: var(--cyan) !important;
-  color: var(--black) !important;
+  background: var(--cyan-dark) !important;
+  color: var(--white) !important;
 }
 
 /* ─── Fix 2: Images stay within card, no overflow ─── */
