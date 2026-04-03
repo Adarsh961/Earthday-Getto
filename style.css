@@ -18,19 +18,20 @@
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
-  background: var(--black);
-  color: var(--white);
+  background: var(--white);
+  color: var(--black);
   font-family: var(--font-body);
   overflow-x: hidden;
-  /* Prevent double-tap zoom on mobile */
   touch-action: manipulation;
 }
 
+body.game-page { background: var(--white); }
+
 /* ─────────────────────────────────────────
-   HERO  (Landing — index.html)
+   HERO
 ───────────────────────────────────────── */
 #hero {
-  min-height: 100svh; /* svh = safe viewport height on mobile (avoids browser chrome issues) */
+  min-height: 100svh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -44,8 +45,8 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(rgba(37,188,180,0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37,188,180,0.07) 1px, transparent 1px);
+    linear-gradient(rgba(37,188,180,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(37,188,180,0.06) 1px, transparent 1px);
   background-size: 48px 48px;
   z-index: 0;
 }
@@ -62,10 +63,7 @@ body {
   pointer-events: none;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
+.hero-content { position: relative; z-index: 1; }
 
 .badge {
   display: inline-block;
@@ -84,18 +82,15 @@ h1 {
   font-family: var(--font-display);
   font-size: clamp(2rem, 6vw, 4.2rem);
   line-height: 1.1;
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 20px;
 }
 
-h1 em {
-  font-style: italic;
-  color: var(--cyan);
-}
+h1 em { font-style: italic; color: var(--cyan); }
 
 .hero-sub {
   font-size: 1.05rem;
-  color: var(--mid-grey);
+  color: #555;
   margin-bottom: 32px;
   max-width: 420px;
   line-height: 1.6;
@@ -119,8 +114,8 @@ h1 em {
   white-space: nowrap;
 }
 
-.trail-step strong { color: var(--cyan); }
-.trail-arrow { color: var(--cyan); font-size: 1rem; }
+.trail-step strong { color: var(--cyan-dark); font-weight: 800; }
+.trail-arrow { color: var(--cyan-dark); font-size: 1rem; }
 
 .cta-btn {
   display: inline-block;
@@ -136,7 +131,6 @@ h1 em {
   text-decoration: none;
   transition: background 0.2s, transform 0.2s;
   letter-spacing: 0.03em;
-  /* Proper tap target size for mobile */
   min-height: 48px;
   line-height: 1.2;
 }
@@ -145,11 +139,8 @@ h1 em {
 .cta-btn:active { background: var(--cyan-dark); transform: scale(0.97); }
 
 .hero-tree-preview {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
 }
 
 .seed-icon {
@@ -164,10 +155,8 @@ h1 em {
 }
 
 /* ─────────────────────────────────────────
-   GAME SECTION  (game.html)
+   GAME SECTION
 ───────────────────────────────────────── */
-body.game-page { background: var(--black); }
-
 #game {
   padding: 48px 32px 80px;
   max-width: 960px;
@@ -184,8 +173,8 @@ body.game-page { background: var(--black); }
 }
 
 .round-indicator {
-  background: var(--cyan);
-  color: var(--black);
+  background: var(--cyan-dark);
+  color: var(--white);
   font-weight: 700;
   font-size: 0.85rem;
   padding: 8px 20px;
@@ -196,7 +185,7 @@ body.game-page { background: var(--black); }
 
 .brands-tag {
   font-size: 0.72rem;
-  color: var(--mid-grey);
+  color: #555;
   letter-spacing: 0.05em;
 }
 
@@ -209,8 +198,8 @@ body.game-page { background: var(--black); }
 }
 
 .tree-container {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(37,188,180,0.2);
+  background: rgba(37,188,180,0.05);
+  border: 1px solid rgba(37,188,180,0.25);
   border-radius: 24px;
   padding: 28px 40px;
   text-align: center;
@@ -223,8 +212,7 @@ body.game-page { background: var(--black); }
 
 .tree-container::before {
   content: '';
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   background: radial-gradient(ellipse at 50% 100%, rgba(37,188,180,0.08) 0%, transparent 70%);
 }
 
@@ -232,8 +220,7 @@ body.game-page { background: var(--black); }
   font-size: 4.5rem;
   transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   animation: popIn 0.5s ease;
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
   filter: drop-shadow(0 0 24px rgba(37,188,180,0.35));
   line-height: 1.2;
 }
@@ -245,25 +232,19 @@ body.game-page { background: var(--black); }
 
 .tree-label {
   font-size: 0.72rem;
-  color: var(--mid-grey);
+  color: #666;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 12px;
-  position: relative;
-  z-index: 1;
+  position: relative; z-index: 1;
 }
 
-.score-bar {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
+.score-bar { display: flex; gap: 16px; align-items: center; }
 
 .score-dot {
-  width: 14px;
-  height: 14px;
+  width: 14px; height: 14px;
   border-radius: 50%;
-  border: 2px solid rgba(37,188,180,0.4);
+  border: 2px solid rgba(37,188,180,0.5);
   background: transparent;
   transition: all 0.4s ease;
 }
@@ -274,7 +255,7 @@ body.game-page { background: var(--black); }
   box-shadow: 0 0 12px rgba(37,188,180,0.6);
 }
 
-.score-dot.wrong { background: #444; border-color: #444; }
+.score-dot.wrong { background: #ccc; border-color: #ccc; }
 
 /* ─── QUESTION ─── */
 .question-block { text-align: center; }
@@ -282,7 +263,7 @@ body.game-page { background: var(--black); }
 .question-prompt {
   font-size: 1.15rem;
   font-family: var(--font-display);
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 28px;
   line-height: 1.5;
   max-width: 600px;
@@ -301,67 +282,49 @@ body.game-page { background: var(--black); }
 }
 
 .outfit-card {
-  background: rgba(255,255,255,0.04);
-  border: 2px solid rgba(255,255,255,0.08);
+  background: #f9f9f9;
+  border: 2px solid #e8e8e8;
   border-radius: 20px;
   padding: 24px 16px 20px;
   cursor: pointer;
-  /* Use tap highlight instead of hover for mobile */
   -webkit-tap-highlight-color: transparent;
   transition: border-color 0.2s, transform 0.2s, background 0.2s;
   text-align: center;
   position: relative;
   overflow: hidden;
-  /* Ensure full area is tappable */
   user-select: none;
 }
 
-.outfit-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 0%, rgba(37,188,180,0.08), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-/* hover only on non-touch devices */
 @media (hover: hover) {
   .outfit-card:hover {
     border-color: var(--cyan);
     transform: translateY(-4px);
-    background: rgba(37,188,180,0.05);
+    background: rgba(37,188,180,0.06);
   }
-  .outfit-card:hover::after { opacity: 1; }
-  .outfit-card:hover .outfit-emoji { transform: scale(1.12) rotate(-3deg); }
 }
 
-/* Active state for touch */
 .outfit-card:active {
   transform: scale(0.97);
   border-color: var(--cyan);
   background: rgba(37,188,180,0.08);
 }
 
-.outfit-emoji {
-  font-size: 3.2rem;
+/* ─── OUTFIT IMAGE ─── */
+.outfit-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 12px;
+  margin-bottom: 14px;
   display: block;
-  margin-bottom: 12px;
-  transition: transform 0.3s;
-  line-height: 1.2;
 }
 
 .outfit-name {
   font-family: var(--font-display);
   font-size: 1rem;
-  color: var(--white);
+  color: var(--black);
   margin-bottom: 7px;
-}
-
-.outfit-desc {
-  font-size: 0.74rem;
-  color: var(--mid-grey);
-  line-height: 1.55;
 }
 
 .outfit-brand {
@@ -371,10 +334,11 @@ body.game-page { background: var(--black); }
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--cyan-dark);
   background: rgba(37,188,180,0.12);
   padding: 4px 10px;
   border-radius: 100px;
+  width: fit-content;
 }
 
 .outfit-card.selected-correct {
@@ -384,7 +348,7 @@ body.game-page { background: var(--black); }
 }
 
 .outfit-card.selected-wrong {
-  border-color: #555;
+  border-color: #ccc;
   opacity: 0.45;
   pointer-events: none;
 }
@@ -394,9 +358,8 @@ body.game-page { background: var(--black); }
 ───────────────────────────────────────── */
 .overlay {
   display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.78);
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5);
   z-index: 100;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -407,21 +370,18 @@ body.game-page { background: var(--black); }
 .popup {
   display: none;
   position: fixed;
-  /* Use top instead of 50% transform so it doesn't hide behind keyboard on mobile */
-  top: 50%;
-  left: 50%;
+  top: 50%; left: 50%;
   transform: translate(-50%, -50%) scale(0.92);
   z-index: 200;
-  background: #111;
+  background: var(--white);
   border: 1px solid rgba(37,188,180,0.35);
   border-radius: 24px;
   padding: 36px 28px 32px;
   max-width: 420px;
-  width: calc(100% - 32px); /* 16px margin each side on mobile */
+  width: calc(100% - 32px);
   text-align: center;
   opacity: 0;
   transition: opacity 0.3s, transform 0.3s;
-  /* Allow scrolling inside popup if content overflows on small screens */
   max-height: 90svh;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
@@ -443,12 +403,12 @@ body.game-page { background: var(--black); }
   font-family: var(--font-display);
   font-size: 1.5rem;
   margin: 12px 0 10px;
-  color: var(--white);
+  color: var(--black);
   line-height: 1.25;
 }
 
 .popup p {
-  color: var(--mid-grey);
+  color: #555;
   font-size: 0.88rem;
   line-height: 1.6;
   margin-bottom: 16px;
@@ -468,38 +428,34 @@ body.game-page { background: var(--black); }
   to   { transform: rotate(360deg); }
 }
 
-/* Coupon Box */
 .coupon-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  background: rgba(37,188,180,0.1);
+  background: rgba(37,188,180,0.08);
   border: 1.5px dashed var(--cyan);
   border-radius: 14px;
   padding: 18px 20px;
   margin: 14px 0 12px;
 }
 
-.coupon-box.gold {
-  border-color: var(--cyan);
-  background: rgba(37,188,180,0.18);
-}
+.coupon-box.gold { background: rgba(37,188,180,0.12); }
 
 .coupon-label {
   font-size: 0.65rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--mid-grey);
+  color: #888;
 }
 
 .coupon-code {
   font-family: var(--font-display);
   font-size: 1.7rem;
   font-weight: 900;
-  color: var(--cyan);
+  color: var(--cyan-dark);
   letter-spacing: 0.08em;
-  word-break: break-all; /* prevents overflow on tiny screens */
+  word-break: break-all;
 }
 
 .copy-btn {
@@ -511,7 +467,7 @@ body.game-page { background: var(--black); }
   font-weight: 700;
   font-size: 0.8rem;
   cursor: pointer;
-  min-height: 44px; /* Apple's minimum tap target */
+  min-height: 44px;
   -webkit-tap-highlight-color: transparent;
   transition: background 0.2s;
 }
@@ -520,19 +476,17 @@ body.game-page { background: var(--black); }
 
 .brand-note {
   font-size: 0.7rem;
-  color: var(--mid-grey);
+  color: #888;
   margin-bottom: 8px !important;
 }
 
 .farewell-note {
   font-size: 0.8rem;
-  color: var(--cyan-light);
+  color: #888;
   letter-spacing: 0.03em;
   margin-top: 10px;
-  opacity: 0.85;
 }
 
-/* Win popup tree */
 .popup-win .big-tree-anim {
   font-size: 5rem;
   display: block;
@@ -542,8 +496,7 @@ body.game-page { background: var(--black); }
 }
 
 .confetti-wrap {
-  position: absolute;
-  inset: 0;
+  position: absolute; inset: 0;
   pointer-events: none;
   overflow: hidden;
   border-radius: 24px;
@@ -559,12 +512,32 @@ body.game-page { background: var(--black); }
   to { transform: translateY(600px) rotate(720deg); opacity: 0; }
 }
 
+/* ─── Back to Home button ─── */
+.back-home-btn {
+  display: inline-block;
+  margin-top: 16px;
+  background: transparent;
+  color: var(--cyan-dark);
+  border: 1.5px solid var(--cyan-dark);
+  padding: 12px 28px;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+  min-height: 44px;
+  line-height: 1.2;
+}
+
+.back-home-btn:hover { background: var(--cyan-dark); color: var(--white); }
+.back-home-btn:active { transform: scale(0.97); }
+
 /* ─────────────────────────────────────────
-   MOBILE  ≤ 600px
+   MOBILE ≤ 600px
 ───────────────────────────────────────── */
 @media (max-width: 600px) {
 
-  /* ── Hero ── */
   #hero {
     grid-template-columns: 1fr;
     padding: 72px 20px 48px;
@@ -572,9 +545,17 @@ body.game-page { background: var(--black); }
     min-height: 100svh;
   }
 
-  .hero-sub       { max-width: 100%; font-size: 0.95rem; }
-  .discount-trail { justify-content: center; }
-  .hero-tree-preview { display: none; } /* hide decorative tree on mobile */
+  .hero-sub { max-width: 100%; font-size: 0.95rem; }
+
+  .discount-trail {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .trail-arrow { transform: rotate(90deg); }
+
+  .hero-tree-preview { display: none; }
 
   .cta-btn {
     width: 100%;
@@ -583,12 +564,11 @@ body.game-page { background: var(--black); }
     font-size: 1.05rem;
   }
 
-  /* ── Game ── */
   #game { padding: 28px 16px 60px; }
 
   .game-header {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: 24px;
     gap: 6px;
   }
@@ -597,31 +577,32 @@ body.game-page { background: var(--black); }
   .tree-art       { font-size: 3.8rem; }
   .tree-stage     { margin-bottom: 28px; }
 
-  .question-prompt {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
+  .question-prompt { font-size: 1rem; margin-bottom: 20px; }
 
-  /* Stack cards vertically on phones */
   .outfits-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }
 
-  /* Horizontal card layout on single column — icon left, text right */
   .outfit-card {
     display: grid;
-    grid-template-columns: 64px 1fr;
+    grid-template-columns: 80px 1fr;
     grid-template-rows: auto auto auto;
     align-items: start;
     text-align: left;
-    padding: 18px 16px;
-    gap: 0 14px;
+    padding: 16px 14px;
+    gap: 0 12px;
     border-radius: 16px;
+    min-height: 100px;
   }
 
-  .outfit-emoji {
-    font-size: 2.8rem;
+  .outfit-img {
+    width: 80px;
+    min-width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center 20%;
     margin-bottom: 0;
     grid-row: 1 / 4;
     grid-column: 1;
@@ -629,14 +610,11 @@ body.game-page { background: var(--black); }
   }
 
   .outfit-name  { grid-column: 2; font-size: 0.95rem; }
-  .outfit-desc  { grid-column: 2; font-size: 0.72rem; margin-top: 4px; }
   .outfit-brand { grid-column: 2; margin-top: 8px; font-size: 0.62rem; }
 
-  /* ── Popups ── */
   .popup {
-    padding: 28px 20px 28px;
+    padding: 28px 20px;
     border-radius: 20px;
-    /* Anchor to bottom of screen for thumb reach */
     top: auto;
     bottom: 0;
     left: 0;
@@ -658,14 +636,13 @@ body.game-page { background: var(--black); }
     to   { transform: translateY(0);    opacity: 1; }
   }
 
-  .popup h2      { font-size: 1.3rem; }
-  .earth-anim    { font-size: 3.5rem; }
-  .coupon-code   { font-size: 1.4rem; }
-
+  .popup h2    { font-size: 1.3rem; }
+  .earth-anim  { font-size: 3.5rem; }
+  .coupon-code { font-size: 1.4rem; }
   .popup-win .big-tree-anim { font-size: 3.8rem; }
 }
 
-/* ─── Tablet  601–900px ─── */
+/* ─── Tablet 601–900px ─── */
 @media (min-width: 601px) and (max-width: 900px) {
   #hero {
     grid-template-columns: 1fr;
@@ -673,7 +650,7 @@ body.game-page { background: var(--black); }
     text-align: center;
   }
 
-  .hero-sub       { max-width: 100%; }
+  .hero-sub { max-width: 100%; }
   .discount-trail { justify-content: center; }
   .hero-tree-preview { display: none; }
 
@@ -684,117 +661,3 @@ body.game-page { background: var(--black); }
     gap: 18px;
   }
 }
-
-/* ─── White background ─── */
-body {
-  background: var(--white) !important;
-  color: var(--black);
-}
-
-body.game-page {
-  background: var(--white) !important;
-}
-
-/* Update text colours for white background */
-h1, h2, .outfit-name, .question-prompt { color: var(--black); }
-.hero-sub, .outfit-desc, .brands-tag    { color: #555; }
-.tree-label                              { color: #666; }
-
-/* Hero grid background subtle on white */
-.hero-bg-grid {
-  background-image:
-    linear-gradient(rgba(37,188,180,0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(37,188,180,0.06) 1px, transparent 1px);
-}
-
-/* Tree container on white */
-.tree-container {
-  background: rgba(37,188,180,0.05);
-  border: 1px solid rgba(37,188,180,0.25);
-}
-
-/* Outfit cards on white */
-.outfit-card {
-  background: #f9f9f9;
-  border: 2px solid #e8e8e8;
-}
-
-.outfit-card:hover {
-  background: rgba(37,188,180,0.06);
-  border-color: var(--cyan);
-}
-
-/* Popup stays dark for contrast */
-.popup {
-  background: #111;
-}
-
-.popup h2, .popup p { color: var(--white); }
-.popup .brand-note, .popup .farewell-note { color: #aaa; }
-
-/* Score dots on white */
-.score-dot { border-color: rgba(37,188,180,0.5); }
-
-/* ─── Back to Home button ─── */
-.back-home-btn {
-  display: inline-block;
-  margin-top: 16px;
-  background: transparent;
-  color: var(--cyan);
-  border: 1.5px solid var(--cyan);
-  padding: 12px 28px;
-  border-radius: 100px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-decoration: none;
-  transition: background 0.2s, color 0.2s;
-  min-height: 44px;
-  line-height: 1.2;
-}
-
-.back-home-btn:hover {
-  background: var(--cyan);
-  color: var(--black);
-}
-
-.back-home-btn:active {
-  transform: scale(0.97);
-}
-
-/* ─── Fix 1: Round indicator visible on white background ─── */
-.round-indicator {
-  background: var(--cyan-dark) !important;
-  color: var(--white) !important;
-}
-
-/* ─── Fix 2: Images stay within card, no overflow ─── */
-.outfit-card {
-  overflow: hidden;
-}
-
-.outfit-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  object-position: center 20%;
-  border-radius: 12px;
-  margin-bottom: 14px;
-  display: block;
-  flex-shrink: 0;
-}
-
-/* ─── Fix 3: Popup white background ─── */
-.popup {
-  background: var(--white) !important;
-  border: 1px solid rgba(37,188,180,0.35);
-}
-
-.popup h2 { color: var(--black) !important; }
-.popup p  { color: #555 !important; }
-.popup .farewell-note { color: #888 !important; }
-.popup .brand-note    { color: #888 !important; }
-.popup .coupon-label  { color: #888; }
-
-/* Confetti wrap on white popup */
-.confetti-wrap { border-radius: 24px; }
