@@ -22,7 +22,7 @@ const rounds = [
     ],
   },
   {
-    prompt: "Both look beautiful — but which one loves the planet back?",
+    prompt: "Both look beautiful, but which one loves the planet back?",
     outfits: [
       {
         image: "https://raw.githubusercontent.com/Adarsh961/Earthday-Getto/main/image(1).jpg",   // ← Round 2, Option A
@@ -42,7 +42,7 @@ const rounds = [
     ],
   },
   {
-    prompt: "The final round — pick the true sustainability champion!",
+    prompt: "The final round, pick the true sustainability champion!",
     outfits: [
       {
         image: "https://raw.githubusercontent.com/Adarsh961/Earthday-Getto/main/image(4).jpg",   // ← Round 3, Option A

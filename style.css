@@ -9,7 +9,7 @@
   --white: #ffffff;
   --grey: #e0e0e0;
   --mid-grey: #888;
-  --font-display: 'Playfair Display', serif;
+  --font-display: 'Poppins', serif;
   --font-body: 'DM Sans', sans-serif;
 }
 
@@ -253,6 +253,16 @@ h1 em { font-style: italic; color: var(--cyan); }
   background: var(--cyan);
   border-color: var(--cyan);
   box-shadow: 0 0 12px rgba(37,188,180,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.score-dot.correct::after {
+  content: '✓';
+  color: var(--white);
+  font-size: 0.55rem;
+  font-weight: 900;
+  line-height: 1;
 }
 
 .score-dot.wrong { background: #ccc; border-color: #ccc; }
@@ -660,4 +670,18 @@ h1 em { font-style: italic; color: var(--cyan); }
     grid-template-columns: 1fr 1fr;
     gap: 18px;
   }
+}
+
+.hero-logo {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.logo-img {
+  height: 75px;
+  width: auto;
+  display: block;
 }
