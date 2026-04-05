@@ -550,7 +550,7 @@ h1 em { font-style: italic; color: var(--cyan); }
 
   #hero {
     grid-template-columns: 1fr;
-    padding: 72px 20px 48px;
+    padding: 160px 20px 48px;
     text-align: center;
     min-height: 100svh;
   }
@@ -678,6 +678,8 @@ h1 em { font-style: italic; color: var(--cyan); }
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  overflow: hidden;
+  margin-bottom: 24px;
 }
 
 .logo-img {

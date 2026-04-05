@@ -219,12 +219,12 @@ function showWrongPopup(discountPct, code) {
 
   if (discountPct) {
     titleEl.textContent = "You made the Earth smile! 🌍";
-    bodyEl.textContent     = "You got " + correctStreak + " right — here's your " + discountPct + "% reward!";
+    bodyEl.textContent     = "You got " + correctStreak + " right, here's your " + discountPct + "% reward!";
     codeEl.textContent     = code;
     couponBox.style.display = "flex";
   } else {
     titleEl.textContent = "The Earth still loves you! 🌏";
-    bodyEl.textContent     = "That wasn't the most sustainable pick — but your curiosity already helps the planet.";
+    bodyEl.textContent     = "That wasn't the most sustainable pick, but your curiosity already helps the planet.";
     couponBox.style.display = "none";
   }
   
